@@ -4,7 +4,7 @@ const app = require("../server");
 let server;
 
 beforeAll((done) => {
-  server = app.listen(3000, done); // Démarre le serveur avant les tests
+  server = app.listen(0, done); // Démarre le serveur avant les tests
 });
 
 afterAll((done) => {
