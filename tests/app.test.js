@@ -1,12 +1,14 @@
 const request = require("supertest");
 const app = require("../server");
 
-beforeAll(async () => {
-  await app.listen(3000);
+let server;
+
+beforeAll((done) => {
+  server = app.listen(3000, done); // Démarre le serveur avant les tests
 });
 
-afterAll(async () => {
-  await app.close();
+afterAll((done) => {
+  server.close(done); // Ferme le serveur après tous les tests
 });
 
 describe("GET /", () => {
