@@ -1,6 +1,14 @@
 const request = require("supertest");
 const app = require("../server");
 
+beforeAll(async () => {
+  await app.listen(3000);
+});
+
+afterAll(async () => {
+  await app.close();
+});
+
 describe("GET /", () => {
   test("respond with hello world", async () => {
     const response = await request(app).get("/");
