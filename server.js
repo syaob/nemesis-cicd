@@ -4,7 +4,9 @@ const app = express();
 const port = process.env.PORT || 3000; // <--- MODIFIEZ CETTE LIGNE
 
 app.get("/", (req, res) => {
-  res.send("Hello World from cloud campus nemesis v2! branch dev modification");
+  res.send(
+    "Hello World from cloud campus nemesis v2! branch dev modification - maj visuel - deploy hook conditionnel"
+  );
 });
 
 app.get("/nemesis", (req, res) => {
