@@ -16,7 +16,7 @@ describe("GET /", () => {
     const response = await request(app).get("/");
     expect(response.statusCode).toBe(200);
     expect(response.text).toBe(
-      "Hello World from cloud campus nemesis v2! branch dev modification"
+      "Hello World from cloud campus nemesis v2! branch dev modification - maj visuel - deploy hook conditionnel"
     );
   });
 });
