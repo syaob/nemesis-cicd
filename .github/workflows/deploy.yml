@@ -1,21 +1,21 @@
 name: CD - Deployment to render
 
 on:
-  workflow_run:
-    workflows: ["CI - Tests Jest"]
+  # workflow_run:
+  #   workflows: ["CI - Tests Jest"]
+  #   branches:
+  #     - main
+  #   types: [completed]
+  push:
     branches:
       - main
-    types: [completed]
-  # push:
-  #   branches:
-  #     - main
-  # pull_request:
-  #   branches:
-  #     - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   deploy:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    # if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     timeout-minutes: 5  # coupe le job si plus de 5 minutes
 
